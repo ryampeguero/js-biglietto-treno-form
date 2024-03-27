@@ -6,6 +6,10 @@ const fullname = document.getElementById("fullname"); // string | null
 const kilometer = document.getElementById("kilometer");  // number | null
 const age = document.getElementById("age"); // number | null
 
+//Variabili secondarie
+const offert = document.getElementById("offert")
+const ticketPrice = document.getElementById("price");
+const passenger = document.getElementById("name");
 const btnForm = document.getElementById("invia");
 
 btnForm.addEventListener("click", function(){
@@ -20,20 +24,24 @@ btnForm.addEventListener("click", function(){
         price = kilometerInt * 0.21; // number
         console.log(price);
         let discount = 0;
-        
+        let offertInfo = "Biglietto Standard";
         if (ageInt < 18) {
             discount = 0.20;
-            // document.getElementById("age").innerHTML = "Minorenne:"
+            offertInfo= "Biglietto Ridotto minorenne";
         } else if (ageInt >= 65) {
             discount = 0.40;
-            // document.getElementById("age").innerHTML = "Over 65:" 
+            offertInfo= "Biglietto Ridotto over 65";
         }
 
+        
         price = price - (price * discount);
         //Output
         console.log("discount:", discount)
         console.log("price:", price)
-        // document.getElementById("biglietto").innerHTML = price.toFixed(2);
+
+        offert.innerHTML = offertInfo;
+        passenger.innerHTML = fullname.value;
+        ticketPrice.innerHTML = price.toFixed(2);
     } else {
         alert ("Dati errati!!")
     }

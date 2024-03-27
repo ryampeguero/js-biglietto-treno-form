@@ -3,6 +3,7 @@ body {
     background: #f06d06;
     color: white;
     text-align: center;
+    width: 100vw;
 }
 
 label {
@@ -10,11 +11,17 @@ label {
     padding: 10px 0;
 }
 
+input {
+    width: 100%;
+}
+
 /* COMMON */
 
 .container {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: center; */
+    /* align-items: center; */
+    width: 100vw;
     margin: 0 auto;
     border: 1px solid white;
     color: maroon;
@@ -32,16 +39,37 @@ label {
 /* Utilities */
 
 .flex {
+    width: 100%;
     display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .flex-col {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
+.gap-10 {
+    gap: 10px;
+}
+
+.tilted-text {
+    position: relative;
+    width: 10%;
+}
+
+.rotate-90 {
+    position: absolute;
+    left: -60px;
+    align-self: center ;
+    text-wrap: nowrap;
+    
+    rotate: -90deg;
+}
 
 
 /* MAIN */
@@ -49,10 +77,9 @@ label {
     width: 40%;
     padding: 5px;
     /* debug */
-    border: 1px solid ;
+    /* border: 1px solid ; */
     /* background-color: lightblue; */
 }
-
 
 .form {
     width: 50%;
@@ -63,10 +90,21 @@ label {
 }
 
 .ticket {
-    width: 100%;
+    width: 90%;
     padding: 10px;
     margin: 10px;
     border-radius: 10px;
     box-shadow: 5px 10px rgba(0, 0, 0, 0.35);
     background-color: aliceblue;
+}
+
+.passenger {
+    background-color: beige;
+}
+
+.info {
+    background-color: burlywood;
+}
+.info th {
+    padding: 0 10px;
 }
