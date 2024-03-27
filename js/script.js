@@ -7,9 +7,12 @@ const kilometer = document.getElementById("kilometer");  // number | null
 const age = document.getElementById("age"); // number | null
 
 //Variabili secondarie
-const offert = document.getElementById("offert")
-const ticketPrice = document.getElementById("price");
 const passenger = document.getElementById("name");
+const offert = document.getElementById("offert");
+const cabin = document.getElementById("cabin");
+const code = document.getElementById("code");
+const ticketPrice = document.getElementById("price");
+
 const btnForm = document.getElementById("invia");
 
 btnForm.addEventListener("click", function(){
@@ -35,14 +38,36 @@ btnForm.addEventListener("click", function(){
 
         
         price = price - (price * discount);
+        const rndCabin = Math.floor(Math.random() * 10) + 1;
+        const rndCode = Math.floor(Math.random() * (99999 - 11111)) + 11111;
         //Output
         console.log("discount:", discount)
         console.log("price:", price)
 
         offert.innerHTML = offertInfo;
         passenger.innerHTML = fullname.value;
-        ticketPrice.innerHTML = price.toFixed(2);
+        cabin.innerHTML = rndCabin;
+        code.innerHTML = rndCode;
+        ticketPrice.innerHTML = price.toFixed(2) + "&euro;";
     } else {
         alert ("Dati errati!!")
     }
 })
+
+const cancelBtn = document.getElementById("cancel");
+
+if (cancelBtn !== null ) {
+    cancelBtn.addEventListener("click", function(){
+        // Ripulire valori
+        fullname.value = "";
+        kilometer.value = "";
+        age.value = "";
+        
+        // Ripulire biglietto
+        offert.innerHTML = "";
+        passenger.innerHTML = "";
+        cabin.innerHTML = "";
+        code.innerHTML = "";
+        ticketPrice.innerHTML = "";
+    })
+}

@@ -23,7 +23,6 @@ input {
     /* align-items: center; */
     width: 100vw;
     margin: 0 auto;
-    border: 1px solid white;
     color: maroon;
 }
 
@@ -98,13 +97,6 @@ input {
     background-color: aliceblue;
 }
 
-.passenger {
-    background-color: beige;
-}
-
-.info {
-    background-color: burlywood;
-}
 .info th {
     padding: 0 10px;
 }
